@@ -10,20 +10,20 @@
 
 好烦。。。是不是？然后我就百度上各种搜，试了好几种方法，又历经了好几次坑，终于总结出了现在的这份代码。  
 
-**调用方法如下： **  
+*调用方法如下：*  
 
 ``` 
-	common.listenBackBtn (function () {
-		//这里写监听返回的回调事件即可
-		//例如，关闭当前页，直接返回到微信公众号
-		if (typeof window.WeixinJSBridge == "undefined"){
-			$(document).on('WeixinJSBridgeReady',function(){ 
-		 		WeixinJSBridge.call('closeWindow');
-		  	}); 
-		} else {
-		  WeixinJSBridge.call('closeWindow');
-		}
-	});
+common.listenBackBtn (function () {
+	//这里写监听返回的回调事件即可
+	//例如，关闭当前页，直接返回到微信公众号
+	if (typeof window.WeixinJSBridge == "undefined"){
+		$(document).on('WeixinJSBridgeReady',function(){ 
+	 		WeixinJSBridge.call('closeWindow');
+	  	}); 
+	} else {
+	  WeixinJSBridge.call('closeWindow');
+	}
+});
 
 ```
 
